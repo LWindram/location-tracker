@@ -1,0 +1,10 @@
+#!/bin/bash
+
+if [ ! -f /var/log/locationhistory.log ]
+then
+	echo "<result>No History</result>"
+else
+	echo "<result>$(tail -r -n 24 /var/log/locationhistory.log)</result>"
+fi
+
+exit 0
